@@ -1,0 +1,82 @@
+.clock {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    border: 3px solid rgb(3, 129, 108);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dot {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: rgb(3, 129, 108);
+}
+.hour {
+    position: absolute;
+    height: 3px;
+    width: 70px;
+    background-color: rgb(3, 129, 108);
+    margin-left: -70px;
+    margin-top: 5px;
+    animation: moving 6s infinite linear reverse;
+    transform-origin: 70px 0px;
+}
+.minute {
+    position: absolute;
+    height: 3px;
+    width: 120px;
+    background-color: rgb(3, 129, 108);
+    animation: moving 3s infinite linear reverse;
+    transform-origin: 123px 0px;
+    margin-left: -123px;
+}
+.space {
+    height: 200px;
+}
+    .bg{
+        width: 300px;
+        height: 200px;
+        position: relative;
+        transition: all 0.6s;
+        perspective: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;       
+     }
+     .left,
+     .right{
+         width:50%;
+         height:100%;
+         background-color: purple;
+         position: absolute;
+         top:0;
+         transition: 1s;
+     }
+     .left{
+         left:0;
+        transform-origin: left center;
+        border-right:1px solid black;
+     }
+     .right{
+         right:0;
+         transform-origin: right center;
+         border-left:1px solid black;
+     }
+     .left:before{
+         transform: translate(127px,80px);
+     }
+     .right:before{
+         transform: translate(0px,80px);
+     }
+     .bg:hover .left{
+         transform: rotateY(-120deg);
+     }
+     .bg:hover .right{
+         transform: rotateY(120deg);
+     }
+
+@keyframes moving {
+    100% {transform: rotate(-360deg);}
+}
